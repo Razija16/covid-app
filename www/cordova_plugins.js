@@ -1,0 +1,1 @@
+/home/thepi/Desktop/PlanTechInc/covid/CovidApp/platforms/android/platform_www/cordova_plugins.js

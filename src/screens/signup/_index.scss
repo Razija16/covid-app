@@ -1,0 +1,40 @@
+.signup-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .header-text{
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .input-wrappers{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .question{
+        color: $gray;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 200;
+        font-size: 16px;
+        margin: 15px 0;
+        .question-login{
+            margin-left: 5px;
+            color: $green-primary;
+            cursor: pointer;
+        }
+    }
+}
