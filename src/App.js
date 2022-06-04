@@ -3,6 +3,8 @@ import SignUp from './screens/signup';
 import Login from './screens/login';
 import { BrowserRouter, Route, Routes, HashRouter, Link } from "react-router-dom";
 import UserProfile from './screens/userProfile';
+import CaseDayInfo from './screens/caseDayInfo';
+import InterventionsInfo from './screens/interventionsInfo';
 import UserContext from './context';
 import NotFound from './screens/notFound';
 
@@ -29,6 +31,8 @@ export default function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/user-profile' element={<UserProfile />} />
+          <Route path='/case-day/:id' element={<CaseDayInfo />} />
+          <Route path='/intervention/:id/:casedayId' element={<InterventionsInfo />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
