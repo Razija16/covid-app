@@ -1,0 +1,27 @@
+.input{
+    background-color: #F6F6F6;
+    width: 300px;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    margin: 8px 0;
+    height: 50px;
+    display: flex;
+    padding: 10px;
+}
+input[type="text"],input[type="email"],input[type="password"] {
+outline: none;
+width: 100%;
+background-color: #F6F6F6;
+border: none;
+height: 100%;
+}
+
+.password-show{
+    color: #6BBA62;
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}

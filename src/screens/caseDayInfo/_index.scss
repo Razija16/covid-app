@@ -1,0 +1,85 @@
+.case-day-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .subheader {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .back-button {
+            margin-right: 50px;
+            margin-left: 25px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        margin-bottom: 35px;
+    }
+
+    .info-container {
+        display: grid;
+        grid-template-columns: 150px 150px;
+        gap: 30px 0;
+
+        .date,
+        .time,
+        .alert_type,
+        .temperature {
+            width: 150px;
+            display: flex;
+            font-weight: 500;
+            align-items: center;
+            justify-content: center;
+
+            .content {
+                width: 90px;
+                margin-left: 15px;
+                text-align: start;
+            }
+        }
+        .time{
+            .img-container{
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .symptoms {
+        .text{
+            font-size: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            font-weight: bold;
+        }
+        .symptoms-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .symptom {
+                background-color: #666666;
+                display: flex;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: 16px;
+                text-transform: capitalize;
+                border-radius: 5px;
+                height: 32px;
+                width: 300px;
+                color: white;
+                margin: 10px 0;
+            }
+        }
+    }
+    
+}
