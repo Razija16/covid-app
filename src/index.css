@@ -200,6 +200,89 @@ input[type="text"], input[type="email"], input[type="password"] {
           justify-content: flex-end;
 }
 
+.card-day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 325px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.card-day .card-img {
+  margin: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.card-day .card-img img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.card-day .card-info {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.card-day .card-info .date-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.card-day .card-info .date-container .time {
+  font-size: 22px;
+}
+
+.card-day .card-info .date-container .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+}
+
+.card-day .card-info .alert-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.card-day .card-info .team-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: #666666;
+}
+
 .screen {
   width: 100vw;
   height: 100vh;
@@ -611,5 +694,152 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .user-profile-screen .button {
   margin-top: 20px;
+}
+
+.intervention-info-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intervention-info-screen .subheader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.intervention-info-screen .subheader .back-button {
+  margin-right: 50px;
+  margin-left: 25px;
+}
+
+.intervention-info-screen .subheader .title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.intervention-info-screen .info-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 150px;
+      grid-template-columns: 150px 150px;
+  gap: 30px 0;
+}
+
+.intervention-info-screen .info-container .date,
+.intervention-info-screen .info-container .time,
+.intervention-info-screen .info-container .alert_type,
+.intervention-info-screen .info-container .team {
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 500;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.intervention-info-screen .info-container .date .content,
+.intervention-info-screen .info-container .time .content,
+.intervention-info-screen .info-container .alert_type .content,
+.intervention-info-screen .info-container .team .content {
+  width: 90px;
+  margin-left: 15px;
+  text-align: start;
+}
+
+.intervention-info-screen .info-container .time .img-container {
+  margin-left: 5px;
+}
+
+.intervention-info-screen .symptoms .text {
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.intervention-info-screen .symptoms .symptoms-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intervention-info-screen .symptoms .symptoms-container .symptom {
+  background-color: #666666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  height: 32px;
+  width: 300px;
+  color: white;
+}
+
+.intervention-info-screen .report-header {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.intervention-info-screen .report {
+  width: 320px;
+  max-width: 320px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #666666;
+  color: white;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=index.css.map */
