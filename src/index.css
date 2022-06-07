@@ -200,6 +200,18 @@ input[type="text"], input[type="email"], input[type="password"] {
           justify-content: flex-end;
 }
 
+.symptom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .card-day {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -841,5 +853,174 @@ input[type="text"], input[type="email"], input[type="password"] {
   background-color: #666666;
   color: white;
   border-radius: 5px;
+}
+
+.form-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-screen .form-header {
+  width: 100%;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-screen .form-header .risk {
+  min-width: 40%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-screen .form-header .back {
+  color: #5DB075;
+  font-weight: 500;
+  width: 33%;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+}
+
+.form-screen .form-header .empty {
+  width: 33%;
+}
+
+.form-screen .form-subheader {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-screen .symptom {
+  background-color: white;
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 15px 20px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 320px;
+}
+
+.form-screen .button {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.form-screen input[type="range"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin-top: 60px;
+  height: 3px;
+  background-color: #C4C4C4;
+  outline: none;
+  border: none;
+}
+
+.form-screen .temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+}
+
+.form-screen .temp .text {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.form-screen .temp .temp-value {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  margin: 20px;
+}
+
+.form-screen .backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-screen .backdrop .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 25px 15px;
+  padding-bottom: 0;
+}
+
+.form-screen .backdrop .modal .modal-header {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.form-screen .backdrop .modal .modal-body {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-screen .backdrop .modal .request {
+  margin-top: 20px;
+  color: #5DB075;
+  font-weight: bold;
 }
 /*# sourceMappingURL=index.css.map */

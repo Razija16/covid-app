@@ -7,6 +7,7 @@ import CaseDayInfo from './screens/caseDayInfo';
 import InterventionsInfo from './screens/interventionsInfo';
 import UserContext from './context';
 import NotFound from './screens/notFound';
+import Form from './screens/form';
 
 export default function App() {
 
@@ -31,6 +32,7 @@ export default function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/user-profile' element={<UserProfile />} />
+          <Route path='/form' element={<Form />} />
           <Route path='/case-day/:id' element={<CaseDayInfo />} />
           <Route path='/intervention/:id/:casedayId' element={<InterventionsInfo />} />
           <Route path='*' element={<NotFound />} />
