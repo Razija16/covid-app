@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import SignUp from './screens/signup';
 import Login from './screens/login';
 import { BrowserRouter, Route, Routes, HashRouter, Link } from "react-router-dom";
+import AdminPatients from './screens/admin/patients';
 import UserProfile from './screens/userProfile';
 import CaseDayInfo from './screens/caseDayInfo';
 import InterventionsInfo from './screens/interventionsInfo';
 import UserContext from './context';
 import NotFound from './screens/notFound';
 import Form from './screens/form';
+import AdminPanel from './screens/admin';
 
 export default function App() {
 
@@ -31,6 +33,9 @@ export default function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/admin' element={<AdminPanel />}>
+            <Route path='/admin/' element={<AdminPatients />} />
+          </Route>
           <Route path='/user-profile' element={<UserProfile />} />
           <Route path='/form' element={<Form />} />
           <Route path='/case-day/:id' element={<CaseDayInfo />} />
