@@ -332,6 +332,71 @@ input[type="text"], input[type="email"], input[type="password"] {
   font-weight: 500;
 }
 
+.info-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 320px;
+  height: 50px;
+  margin: 10px 0;
+}
+
+.info-item .img-wrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+}
+
+.info-item .img-wrapper img {
+  width: 40px;
+  height: 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.info-item .flex-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 260px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.info-item .flex-right .label {
+  color: #959595;
+  font-weight: 500;
+  font-size: 16px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.info-item .flex-right .value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .screen {
   width: 100vw;
   height: 100vh;
@@ -1111,5 +1176,51 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .admin-panel .navbar .active {
   background-color: #9BE17C;
+}
+
+.patient-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.patient-info .subheader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.patient-info .subheader .back-button {
+  margin-left: 20px;
+}
+
+.patient-info .subheader .title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.patient-info .subheader .empty {
+  width: 60px;
+}
+
+.patient-info .delete {
+  background-color: #EB5757;
+  margin-top: 40px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,32 @@
+.patient-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .subheader {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .back-button {
+            margin-left: 20px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .empty{
+            width: 60px;
+        }
+
+    }
+
+
+    .delete {
+        background-color: #EB5757;
+        margin-top: 40px;
+    }
+}
