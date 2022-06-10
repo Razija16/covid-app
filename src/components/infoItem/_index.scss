@@ -1,0 +1,39 @@
+.info-item {
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    height: 50px;
+    margin: 10px 0;
+
+    .img-wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+
+        img {
+            width: 40px;
+            height: 40px;
+            align-self: center;
+        }
+    }
+
+    .flex-right {
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        .label{
+        color: #959595;       
+        font-weight: 500;
+        font-size: 16px;
+        width: fit-content;
+        }
+        .value{
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}
