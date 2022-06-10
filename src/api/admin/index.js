@@ -10,5 +10,14 @@ class AdminApi {
             }
         })
     }
+    static async getUser(id) {
+        return fetch(`${this.BACKEND_URL}/patient/${id}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
+    }
 }
 export default AdminApi
