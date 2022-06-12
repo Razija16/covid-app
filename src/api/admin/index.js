@@ -19,5 +19,24 @@ class AdminApi {
             }
         })
     }
+    static async getTeams() {
+        return fetch(`${this.BACKEND_URL}/teams`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
+    }
+    static async createTeam(data) {
+        return fetch(`${this.BACKEND_URL}/createteam`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body:JSON.stringify(data)
+        })
+    }
 }
 export default AdminApi
