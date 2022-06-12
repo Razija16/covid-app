@@ -9,6 +9,7 @@ import InterventionsInfo from './screens/interventionsInfo';
 import UserContext from './context';
 import UsersInfo from "./screens/admin/patientInfo"
 import NotFound from './screens/notFound';
+import Team from "./screens/admin/team"
 import Form from './screens/form';
 import AdminPanel from './screens/admin';
 
@@ -36,6 +37,7 @@ export default function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/admin' element={<AdminPanel />}>
             <Route path='/admin/' element={<AdminPatients />} />
+            <Route path='/admin/team' element={<Team />} />
             <Route path='/admin/patient/:id' element={<UsersInfo />} />
           </Route>
           <Route path='/user-profile' element={<UserProfile />} />
