@@ -1,12 +1,32 @@
-import React, { useState } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import UserIcon from "../../assets/images/user.png"
 import Phone from "../../assets/images/phone.png"
 import Team from "../../assets/images/team.png"
 import Header from '../../components/header'
 
 const AdminPanel = () => {
-    const [active, setActive] = useState(1)
+    const location = useLocation();
+    const [active, setActive] = useState(null)
+    useEffect(() => {
+
+        switch (location.pathname) {
+            case '/admin':
+                setActive(1)
+                break;
+            case '/admin/intervention':
+                setActive(2)
+                break;
+            case '/admin/team':
+                setActive(3)
+                break;
+
+            default:
+                break;
+        }
+
+    }, [location.pathname])
+
 
     return (
         <div className='screen admin-panel'>

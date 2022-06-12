@@ -9,7 +9,7 @@
         margin-top: auto;
         width: 100%;
         height: 66px;
-        background-color: red;
+        background-color: #c4c4c4;
         justify-content: space-between;
 
         .link {
@@ -31,6 +31,8 @@
     }
 }
 
+
 @import "./patients/index";
 @import "./team/index";
+@import "./teamInfo/index";
 @import "./patientInfo/index";

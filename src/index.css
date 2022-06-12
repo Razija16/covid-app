@@ -1147,7 +1147,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   margin-top: auto;
   width: 100%;
   height: 66px;
-  background-color: red;
+  background-color: #c4c4c4;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1278,6 +1278,164 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .team-wrapper .backdrop .modal .first .alert-type {
   margin-left: 5px;
+}
+
+.team-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team-info .subheader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.team-info .subheader .back-button {
+  margin-left: 20px;
+}
+
+.team-info .subheader .title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.team-info .subheader .empty {
+  width: 60px;
+}
+
+.team-info .delete {
+  background-color: #EB5757;
+  margin-top: 40px;
+}
+
+.team-info .member-wrapper {
+  background-color: #666666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  height: 38px;
+  width: 300px;
+  color: white;
+  margin: 10px 0;
+}
+
+.team-info h2 {
+  text-align: center;
+}
+
+.team-info .backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0px;
+}
+
+.team-info .backdrop .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 320px;
+  min-height: 350px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 25px 15px;
+  padding-bottom: 0;
+}
+
+.team-info .backdrop .modal .exit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 25;
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.team-info .backdrop .modal .error {
+  margin-bottom: 10px;
+}
+
+.team-info .backdrop .modal .button {
+  margin-top: 15px;
+}
+
+.team-info .backdrop .modal .modal-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.team-info .backdrop .modal .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 18px;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.team-info .backdrop .modal .covid-name-input {
+  background-color: white;
+  border: 1px solid #A3A3A3;
+  border-radius: 5px;
+  height: 32px;
+  padding: 15px 8px;
+  margin: 15px 0;
 }
 
 .patient-info {
