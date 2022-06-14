@@ -13,26 +13,13 @@ import NotFound from './screens/notFound';
 import Team from "./screens/admin/team"
 import Form from './screens/form';
 import AdminPanel from './screens/admin';
+import { UserContextProvider } from "./context/index"
 
 export default function App() {
 
-  console.log("Cordova:", window.cordova)
-  // if (window.cordova") Router = HashRouter;
-
-  const [user, setUser] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    user_id: null,
-    caseId: null
-  })
-
   return (
-    <UserContext.Provider value={{
-      user,
-      setUser
-    }}>
-      <BrowserRouter>
+    <HashRouter basename='/'>
+      <UserContextProvider>
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
@@ -48,8 +35,8 @@ export default function App() {
           <Route path='/intervention/:id/:casedayId' element={<InterventionsInfo />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </UserContext.Provider>
+      </UserContextProvider>
+    </HashRouter>
 
   )
 }

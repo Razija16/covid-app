@@ -12,24 +12,39 @@ const UserProfile = () => {
   //buttonToggle useState variable for displaying if it's
   const [buttonToggle, setButtonToggle] = useState(true);
   const [cases, setCases] = useState([])
+  const [modal, setModal] = useState(false)
   const [interventions, setInterventions] = useState([])
-  const { user, setUser } = useContext(UserContext)
+  const { currentUser, setCurrentUser, logged } = useContext(UserContext)
 
   useEffect(() => {
 
     const makeRequest = async () => {
       try {
-        const result = await UserApi.getProfileInfo(user.user_id);
+        const result = await UserApi.getProfileInfo(currentUser.user_id);
         const data = await result.json();
-        console.log("DATA", data)
-
         if (data?.Case?.id)
-          setUser((user) => {
+          setCurrentUser((currentUser) => {
             return {
-              ...user,
+              ...currentUser,
               caseId: data.Case.id
             }
           })
+        if (data?.button != null) {
+          setCurrentUser((currentUser) => {
+            return {
+              ...currentUser,
+              button: data.button
+            }
+          })
+        }
+        if (data?.IsolationDays?.isolation_days != null) {
+          setCurrentUser((currentUser) => {
+            return {
+              ...currentUser,
+              isolation_days: data.IsolationDays.isolation_days
+            }
+          })
+        }
         //setting data to cases
         setCases(data.CaseDays)
 
@@ -43,10 +58,11 @@ const UserProfile = () => {
       }
     }
 
-    //fetching to backend 
-    makeRequest();
+    //fetching to backend if logged
+    if (logged)
+      makeRequest();
 
-  }, [])
+  }, [logged])
 
   const renderCases = () => {
 
@@ -63,21 +79,28 @@ const UserProfile = () => {
 
   const renderInterventions = () => {
     return interventions.map((data, key) => {
-      console.log(data)
       return <Card
         createdAt={data.createdAt}
-        team={data.interventionteam.name}
+        team={data.interventionteam?.name}
         img={Medical}
         onClick={() => { navigate(`/intervention/${data.id}/${data.casedayId}`) }}
         key={key}
+        handled={data.handled}
       />
     })
   }
 
   return (
     <div className='screen user-profile-screen'>
-      <Header name={`${user.first_name} ` + ` ` + `${user.last_name}`} />
-
+      <Header name={`${currentUser?.first_name} ` + ` ` + `${currentUser?.last_name}`} />
+      <div className="quarantine">
+        <div className="label">
+          Days in quarantine left:
+        </div>
+        <div className="timer">
+          {currentUser?.isolation_days}
+        </div>
+      </div>
       <div className="toggle-buttons">
         <button className={`left-button-toggle ${buttonToggle ? "active" : ""}`} onClick={() => { setButtonToggle(true) }}>Case Days</button>
         <button className={`right-button-toggle ${!buttonToggle ? "active" : ""}`} onClick={() => { setButtonToggle(false) }}>Intervention</button>
@@ -91,12 +114,39 @@ const UserProfile = () => {
           {renderInterventions()}
         </div>
       }
-      <button className='button' onClick={() => {
-        //navigate to symptoms forms
-        navigate("/form")
-      }}>Fill Symptom Form</button>
+      <button className='button'
+        onClick={() => {
+          //navigate to symptoms forms
+          if (!currentUser?.button) {
+            setModal(true)
+            return;
+          }
+          navigate("/form")
+        }}
+        style={{
+          backgroundColor: currentUser?.button ? "#5DB075" : "gray"
+        }}
+      // disabled={true}
+      >Fill Symptom Form</button>
 
-    </div>
+      {modal &&
+        <div className='backdrop'>
+          <div className="modal">
+            <div className="label">
+              You can fill out form every 6 hours!!
+            </div>
+            <button
+              className='button'
+              type="submit"
+              onClick={() => {
+                setModal(false)
+              }}
+            >
+              OK
+            </button>
+          </div>
+        </div>}
+    </div >
   )
 }
 

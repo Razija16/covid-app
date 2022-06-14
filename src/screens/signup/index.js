@@ -1,26 +1,32 @@
-import React, {useState } from 'react'
+import React, { useState } from 'react'
 import Input from "../../components/Input"
 import Logo from "../../assets/images/logo.png"
 import { useForm } from 'react-hook-form'
 import AuthApi from '../../api/auth'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
-    
+
     const [errorMessage, setErrorMessage] = useState(null)
     return (
         <div className='screen signup-screen'>
             <form onSubmit={handleSubmit(async (data) => {
                 try {
                     const result = await AuthApi.signup(data);
-                    console.log("REZULTAT")
                     console.log(result)
-                    //clear error and redirect  
-                    setErrorMessage(null)
-                    navigate("/login")
-                    
+                    if (result?.ok===true) {
+                        //clear error and redirect  
+                        setErrorMessage(null)
+                        navigate("/login")
+                    }else{
+                        const res = await result.json()
+                        console.log(res.message)
+                        setErrorMessage(res.message)
+                    }
+
+
                 } catch (err) {
                     console.log("imamo error")
                     console.log(err)
@@ -34,7 +40,7 @@ const SignUp = () => {
                 </div>
 
                 <div className="header-text">Sign Up</div>
-                {errorMessage && <div className='error'>Server Error! Check if server and database are running </div>}
+                {errorMessage && <div className='error'>{errorMessage} </div>}
                 <div className="input-wrappers">
 
                     <Input
@@ -47,7 +53,7 @@ const SignUp = () => {
                         placeholder="Last Name"
                         register={register("last_name", { required: "Last name is required" })}
                         error={errors.last_name} />
-                    
+
                     <Input
                         type="email"
                         placeholder="Email"
@@ -68,7 +74,9 @@ const SignUp = () => {
                 </div>
 
                 <div className="question">
-                    Already have an account? <span className="question-login">Login</span>
+                    <Link to="/login">
+                        Already have an account? <span className="question-login">Login</span>
+                    </Link>
                 </div>
 
                 <input type="submit" className='button' value="Sign Up" />
