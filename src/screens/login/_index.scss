@@ -3,6 +3,11 @@
     flex-direction: column;
     align-items: center;
 
+    a{
+        text-decoration: none;
+        color:gray;
+        font-weight: 500;
+    }
     .logo-wrapper {
         width: 100%;
         display: flex;

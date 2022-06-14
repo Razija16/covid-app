@@ -416,6 +416,12 @@ input[type="text"], input[type="email"], input[type="password"] {
           align-items: center;
 }
 
+.login-screen a {
+  text-decoration: none;
+  color: gray;
+  font-weight: 500;
+}
+
 .login-screen .logo-wrapper {
   width: 100%;
   display: -webkit-box;
@@ -492,6 +498,12 @@ input[type="text"], input[type="email"], input[type="password"] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.signup-screen a {
+  text-decoration: none;
+  color: gray;
+  font-weight: 500;
 }
 
 .signup-screen .logo-wrapper {
@@ -572,6 +584,36 @@ input[type="text"], input[type="email"], input[type="password"] {
           align-items: center;
 }
 
+.user-profile-screen .quarantine {
+  width: 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-profile-screen .quarantine .label {
+  color: #EB5757;
+  font-size: 24px;
+  font-weight: bold;
+  width: 180px;
+}
+
+.user-profile-screen .quarantine .timer {
+  font-size: 32px;
+  font-weight: bold;
+  background-color: #EB5757;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+
 .user-profile-screen .toggle-buttons {
   cursor: pointer;
   padding: 1px;
@@ -613,13 +655,91 @@ input[type="text"], input[type="email"], input[type="password"] {
   color: #5DB075;
 }
 
-.user-profile-screen .cases, .user-profile-screen .interventions {
-  height: 420px;
+.user-profile-screen .cases,
+.user-profile-screen .interventions {
+  height: 350px;
   overflow-y: auto;
 }
 
 .user-profile-screen .button {
-  margin-top: 20px;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.user-profile-screen .backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-profile-screen .backdrop .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 15px 5px;
+  padding-bottom: 0;
+}
+
+.user-profile-screen .backdrop .modal .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 26px;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.user-profile-screen .backdrop .modal .button {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-height: 740px) {
+  .cases,
+  .interventions {
+    height: 460px !important;
+    overflow-y: auto;
+  }
+}
+
+@media only screen and (min-height: 850px) {
+  .cases,
+  .interventions {
+    height: 550px !important;
+    overflow-y: auto;
+  }
 }
 
 .case-day-screen {
@@ -760,6 +880,36 @@ input[type="text"], input[type="email"], input[type="password"] {
           align-items: center;
 }
 
+.user-profile-screen .quarantine {
+  width: 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-profile-screen .quarantine .label {
+  color: #EB5757;
+  font-size: 24px;
+  font-weight: bold;
+  width: 180px;
+}
+
+.user-profile-screen .quarantine .timer {
+  font-size: 32px;
+  font-weight: bold;
+  background-color: #EB5757;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+
 .user-profile-screen .toggle-buttons {
   cursor: pointer;
   padding: 1px;
@@ -801,13 +951,91 @@ input[type="text"], input[type="email"], input[type="password"] {
   color: #5DB075;
 }
 
-.user-profile-screen .cases, .user-profile-screen .interventions {
-  height: 420px;
+.user-profile-screen .cases,
+.user-profile-screen .interventions {
+  height: 350px;
   overflow-y: auto;
 }
 
 .user-profile-screen .button {
-  margin-top: 20px;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.user-profile-screen .backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-profile-screen .backdrop .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 15px 5px;
+  padding-bottom: 0;
+}
+
+.user-profile-screen .backdrop .modal .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 26px;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.user-profile-screen .backdrop .modal .button {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-height: 740px) {
+  .cases,
+  .interventions {
+    height: 460px !important;
+    overflow-y: auto;
+  }
+}
+
+@media only screen and (min-height: 850px) {
+  .cases,
+  .interventions {
+    height: 550px !important;
+    overflow-y: auto;
+  }
 }
 
 .intervention-info-screen {

@@ -3,6 +3,30 @@
     flex-direction: column;
     align-items: center;
 
+    .quarantine {
+        width: 320px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .label {
+            color: #EB5757;
+            font-size: 24px;
+            font-weight: bold;
+            width: 180px;
+        }
+
+        .timer {
+            font-size: 32px;
+            font-weight: bold;
+            background-color: #EB5757;
+            color: white;
+            padding: 10px;
+            border-radius: 15px;
+        }
+    }
+
     .toggle-buttons {
         cursor: pointer;
         padding: 1px;
@@ -39,12 +63,69 @@
 
     }
 
-    .cases, .interventions {
-        height: 420px;
+    .cases,
+    .interventions {
+        height: 350px;
         overflow-y: auto;
     }
 
     .button {
-        margin-top: 20px;
+        margin-top: auto;
+        margin-bottom: 20px;
+    }
+
+    .backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .modal {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            border-radius: 5px;
+            background-color: white;
+            padding: 15px 5px;
+            padding-bottom: 0;
+
+            .label {
+                display: flex;
+                justify-content: flex-start;
+                font-size: 26px;
+                font-weight: bold;
+                margin: auto;
+                text-align: center;
+                width: fit-content;
+            }
+
+            .button {
+                margin-top: auto;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and(min-height:740px) {
+    .cases,
+    .interventions {
+        height: 460px !important;
+        overflow-y: auto;
+    }
+}
+@media only screen and(min-height:850px) {
+    .cases,
+    .interventions {
+        height: 550px !important;
+        overflow-y: auto;
     }
 }
