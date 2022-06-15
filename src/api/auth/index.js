@@ -31,8 +31,20 @@ class AuthApi {
                 throw new Error("Error signing in!");
             })
             .then((data) => {
+                console.log("DATA:",data)
+                //redirect?
                 return data;
             });
+    }
+    static async getCurrentUser() {
+        return fetch(`${this.BACKEND_URL}/profile/test`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            }
+        })
     }
 }
 

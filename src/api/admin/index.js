@@ -6,7 +6,8 @@ class AdminApi {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
         })
     }
@@ -15,7 +16,28 @@ class AdminApi {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            }
+        })
+    }
+    static async deleteUser(id) {
+        return fetch(`${this.BACKEND_URL}/deletepatient/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            }
+        })
+    }
+    static async getTeam(id) {
+        return fetch(`${this.BACKEND_URL}/team/${id}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
         })
     }
@@ -24,7 +46,59 @@ class AdminApi {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            }
+        })
+    }
+    static async assignTeam(data) {
+        return fetch(`${this.BACKEND_URL}/intervention/assign`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            },
+            body:JSON.stringify(data)
+        })
+    }
+    static async getCovidTeams() {
+        return fetch(`${this.BACKEND_URL}/intervention/assignform`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            }
+        })
+    }
+    static async getInterventions(active) {
+        return fetch(`${this.BACKEND_URL}/interventions/${active}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            }
+        })
+    }
+    static async getIntervention(id,casedayId) {
+        return fetch(`${this.BACKEND_URL}/intervention/${id}/${casedayId}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            }
+        })
+    }
+    static async deleteIntervention(id) {
+        return fetch(`${this.BACKEND_URL}/deleteintervention/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
         })
     }
@@ -33,18 +107,10 @@ class AdminApi {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             },
-            body: JSON.stringify(data)
-        })
-    }
-    static async getTeam(id) {
-        return fetch(`${this.BACKEND_URL}/team/${id}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            }
+            body:JSON.stringify(data)
         })
     }
     static async addMember(data) {
@@ -52,7 +118,8 @@ class AdminApi {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             },
             body:JSON.stringify(data)
         })
@@ -62,7 +129,8 @@ class AdminApi {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
         })
     }
@@ -71,9 +139,11 @@ class AdminApi {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
         })
     }
+
 }
 export default AdminApi

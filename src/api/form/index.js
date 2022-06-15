@@ -6,7 +6,8 @@ class FormApi{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
         })
     }
@@ -15,7 +16,8 @@ class FormApi{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             },
             body:JSON.stringify(obj)
         })

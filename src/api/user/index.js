@@ -6,7 +6,8 @@ class UserApi{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
         })
     }
@@ -15,8 +16,20 @@ class UserApi{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
+        })
+    }
+    static async requestIntervention (data){
+        return fetch(`${this.BACKEND_URL}/intervention/createintervention`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
+            },
+            body:JSON.stringify(data)
         })
     }
     static async getProfileInfo (userId){
@@ -24,7 +37,8 @@ class UserApi{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization" :`${localStorage.getItem('token')}`
             }
         })
     }
