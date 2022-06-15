@@ -1711,4 +1711,185 @@ input[type="text"], input[type="email"], input[type="password"] {
   background-color: #EB5757;
   margin-top: 40px;
 }
+
+.interventions-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.interventions-wrapper .filter {
+  width: 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 20px;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 10px;
+}
+
+.interventions-wrapper .filter .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.interventions-wrapper .filter .first .label {
+  font-size: 18px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.intervention-info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intervention-info-wrapper .subheader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.intervention-info-wrapper .subheader .back-button {
+  margin-left: 20px;
+}
+
+.intervention-info-wrapper .subheader .title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.intervention-info-wrapper .subheader .empty {
+  width: 60px;
+}
+
+.intervention-info-wrapper .delete {
+  background-color: #EB5757;
+  margin-top: 20px;
+}
+
+.intervention-info-wrapper .backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0px;
+}
+
+.intervention-info-wrapper .backdrop .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 320px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 25px 15px;
+  padding-bottom: 0;
+}
+
+.intervention-info-wrapper .backdrop .modal .exit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 25;
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.intervention-info-wrapper .backdrop .modal .button {
+  margin: 15px 0;
+}
+
+.intervention-info-wrapper .backdrop .modal .modal-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.intervention-info-wrapper .backdrop .modal .select {
+  padding: 10px;
+  border: 1px solid #A3A3A3;
+  margin: 10px 0;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.intervention-info-wrapper .backdrop .modal .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 20px;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.intervention-info-wrapper .backdrop .modal .covid-name-input-area {
+  background-color: white;
+  border: 1px solid #A3A3A3;
+  border-radius: 5px;
+  height: 165px;
+  width: 100%;
+  max-width: 320px;
+  padding: 15px 8px;
+  margin: 15px 0;
+  resize: none;
+}
 /*# sourceMappingURL=index.css.map */

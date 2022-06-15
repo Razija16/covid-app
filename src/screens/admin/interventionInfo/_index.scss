@@ -1,0 +1,109 @@
+.intervention-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .subheader {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .back-button {
+            margin-left: 20px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .empty {
+            width: 60px;
+        }
+
+    }
+
+
+    .delete {
+        background-color: #EB5757;
+        margin-top: 20px;
+    }
+
+    .backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0px;
+
+        .modal {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 320px;
+            height: fit-content;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            border-radius: 5px;
+            background-color: white;
+            padding: 25px 15px;
+            padding-bottom: 0;
+
+            .exit {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                z-index: 25;
+                width: 24px;
+                height: 24px;
+                max-width: 24px;
+                max-height: 24px;
+            }
+
+            .button {
+                margin: 15px 0;
+            }
+
+            .modal-header {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .select {
+                padding: 10px;
+                border: 1px solid #A3A3A3;
+                margin: 10px 0;
+                border-radius: 5px;
+                width: 100%;
+            }
+
+            .label {
+                display: flex;
+                justify-content: flex-start;
+                font-size: 20px;
+                font-weight: bold;
+                width: fit-content;
+            }
+
+            .covid-name-input-area {
+                background-color: white;
+                border: 1px solid #A3A3A3;
+                border-radius: 5px;
+                height: 165px;
+                width: 100%;
+                max-width: 320px;
+                padding: 15px 8px;
+                margin: 15px 0;
+                resize: none;
+            }
+        }
+    }
+}

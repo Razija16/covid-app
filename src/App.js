@@ -13,6 +13,8 @@ import NotFound from './screens/notFound';
 import Team from "./screens/admin/team"
 import Form from './screens/form';
 import AdminPanel from './screens/admin';
+import AdminIntervention from "./screens/admin/intervention"
+import AdminInterventionInfo from "./screens/admin/interventionInfo"
 import { UserContextProvider } from "./context/index"
 
 export default function App() {
@@ -28,6 +30,8 @@ export default function App() {
             <Route path='/admin/patient/:id' element={<UsersInfo />} />
             <Route path='/admin/team' element={<Team />} />
             <Route path='/admin/team/:id' element={<TeamInfo />} />
+            <Route path='/admin/intervention' element={<AdminIntervention />} />
+            <Route path='/admin/intervention/:id/:casedayId' element={<AdminInterventionInfo />} />
           </Route>
           <Route path='/user-profile' element={<UserProfile />} />
           <Route path='/form' element={<Form />} />

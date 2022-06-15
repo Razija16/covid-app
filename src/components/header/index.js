@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import LogoSmall from "../../assets/images/logo-small.png"
-
+import UserContext from '../../context';
 /* 
     props:
         -name:(string)
@@ -10,6 +10,7 @@ import LogoSmall from "../../assets/images/logo-small.png"
 
 
 const Header = (props) => {
+    const { logout } = useContext(UserContext)
     return (
         <div className='header'>
             <div className="invisible"></div>
@@ -17,7 +18,9 @@ const Header = (props) => {
                 <img src={LogoSmall} className="logo" />
                 <div className='header-name'>{props.name}</div>
             </div>
-            <div className="logout" onClick={()=>{console.log("Logout")}}>
+            <div className="logout" onClick={() => {
+                logout()
+            }}>
                 Logout
             </div>
 
