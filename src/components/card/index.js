@@ -26,12 +26,12 @@ import { formateDate, whichType } from "../../utils/dateFunctions.js";
             array of employes for that covid team
         -img:(img)
             displaying icon in card
-
+        --handled(bool)
+            if intervnetion is handled
 */
 
 const Card = (props) => {
     const date = new Date(+props.createdAt);
-    
     return (
         <div className='card-day' onClick={props?.onClick}>
             <div className="card-img">
@@ -48,6 +48,7 @@ const Card = (props) => {
                     })}
                 </div>
                 {props.alert_type ? whichType(props.alert_type) : props?.team && <div className='team-name'> {props.team}</div>}
+                {props.handled===false && <div className='team-name'>Pending...</div>}
             </div>
         </div>
     )

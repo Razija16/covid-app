@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import SignUp from './screens/signup';
 import Login from './screens/login';
 import { BrowserRouter, Route, Routes, HashRouter, Link } from "react-router-dom";
-import AdminPatients from './screens/admin/patients';
 import UserProfile from './screens/userProfile';
 import CaseDayInfo from './screens/caseDayInfo';
 import InterventionsInfo from './screens/interventionsInfo';
 import UserContext from './context';
-import UsersInfo from "./screens/admin/patientInfo"
-import TeamInfo from "./screens/admin/teamInfo"
 import NotFound from './screens/notFound';
-import Team from "./screens/admin/team"
 import Form from './screens/form';
+import AdminPatients from './screens/admin/patients';
+import UsersInfo from "./screens/admin/patientInfo"
+import Team from "./screens/admin/team"
+import TeamInfo from "./screens/admin/teamInfo"
 import AdminPanel from './screens/admin';
 import AdminIntervention from "./screens/admin/intervention"
 import AdminInterventionInfo from "./screens/admin/interventionInfo"
@@ -24,7 +24,6 @@ export default function App() {
       <UserContextProvider>
         <Routes>
           <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<SignUp />} />
           <Route path='/admin' element={<AdminPanel />}>
             <Route path='/admin/' element={<AdminPatients />} />
             <Route path='/admin/patient/:id' element={<UsersInfo />} />
@@ -33,6 +32,7 @@ export default function App() {
             <Route path='/admin/intervention' element={<AdminIntervention />} />
             <Route path='/admin/intervention/:id/:casedayId' element={<AdminInterventionInfo />} />
           </Route>
+          <Route path='/signup' element={<SignUp />} />
           <Route path='/user-profile' element={<UserProfile />} />
           <Route path='/form' element={<Form />} />
           <Route path='/case-day/:id' element={<CaseDayInfo />} />
@@ -41,6 +41,5 @@ export default function App() {
         </Routes>
       </UserContextProvider>
     </HashRouter>
-
   )
 }

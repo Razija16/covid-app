@@ -169,16 +169,13 @@ const InterventionInfo = () => {
                                     setErrorMessage("Select team")
                                     return;
                                 }
-                                console.log(modalData?.report)
                                 if (!modalData?.report || modalData?.report == "") {
                                     setErrorMessage("Write report")
                                     return;
                                 }
                                 setErrorMessage(null)
                                 try {
-                                    console.log(modalData);
                                     const res = await AdminApi.assignTeam(modalData)
-                                    console.log(res);
                                     const final = await res.json()
                                     if (res.ok) {
                                         navigate(0)

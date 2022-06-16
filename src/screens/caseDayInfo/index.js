@@ -12,12 +12,12 @@ import Risk from "../../assets/images/risk.png"
 import Temp from "../../assets/images/temp.png"
 
 const caseDayInfo = () => {
-  const { user, setUser } = useContext(UserContext)
+  const { currentUser, setCurrentUser } = useContext(UserContext)
   const [correctDate, setCorrectDate] = useState(null)
   const [data, setData] = useState(null)
   const params = useParams();
   const navigate = useNavigate();
- 
+
   useEffect(() => {
 
     console.log("DATA:", data)
@@ -29,12 +29,9 @@ const caseDayInfo = () => {
   useEffect(() => {
 
     const makeRequest = async () => {
-      console.log("Request")
       try {
         const result = await UserApi.getCaseDay(params.id);
-        console.log(result)
         const final_data = await result.json();
-        console.log(final_data)
         setData(final_data)
 
 
@@ -48,7 +45,7 @@ const caseDayInfo = () => {
   }, [])
   return (
     <div className='screen case-day-screen'>
-      <Header name={`${user.first_name} ` + ` ` + `${user.last_name}`} />
+      <Header name={`${currentUser?.first_name} ` + ` ` + `${currentUser?.last_name}`} />
 
       <div className="subheader">
         <div className="back-button" onClick={() => { navigate(`/user-profile`) }}>
@@ -57,6 +54,7 @@ const caseDayInfo = () => {
         <div className="title">
           CASE DAY
         </div>
+        <div className="empty"></div>
       </div>
       <div className="info-container">
         <div className="date">
@@ -101,8 +99,8 @@ const caseDayInfo = () => {
 
         <div className="symptoms-container">
           {
-            data?.Symptoms?.length>0 ? data?.Symptoms.map((symptom, key) => {
-              return <div className="symptom">{symptom.name}</div>
+            data?.Symptoms?.length > 0 ? data?.Symptoms.map((symptom, key) => {
+              return <div className="symptom" key={key}>{symptom.name}</div>
             }) : <h2>NO SYMPTOMS THIS DAY</h2>
           }
         </div>

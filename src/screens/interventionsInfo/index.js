@@ -12,7 +12,7 @@ import Team from "../../assets/images/team.png"
 
 
 const InterventionsInfo = (props) => {
-  const { user, setUser } = useContext(UserContext)
+  const { currentUser, setCurrentUser } = useContext(UserContext)
   const params = useParams();
   console.log(params)
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ const InterventionsInfo = (props) => {
 
   return (
     <div className='screen intervention-info-screen'>
-      <Header name={`${user.first_name} ` + ` ` + `${user.last_name}`} />
+      <Header name={`${currentUser?.first_name} ` + ` ` + `${currentUser?.last_name}`} />
       <div className="subheader">
         <div className="back-button" onClick={() => { navigate(`/user-profile`) }}>
           <img src={backImg} alt="Back" />
@@ -58,6 +58,7 @@ const InterventionsInfo = (props) => {
         <div className="title">
           Intervention
         </div>
+        <div className="empty"></div>
       </div>
 
       <div className="info-container">
@@ -92,7 +93,7 @@ const InterventionsInfo = (props) => {
           <img src={Team} alt="riskImg" />
           </div>
           <div className="content">
-            {data?.Intervention?.interventionteam?.name}
+            {data?.Intervention?.interventionteam?.name ? data?.Intervention?.interventionteam?.name : "Unassigned"}
           </div>
         </div>
       </div>
@@ -105,7 +106,7 @@ const InterventionsInfo = (props) => {
         <div className="symptoms-container">
           {
             data?.Symptoms?.length>0 ? data?.Symptoms.map((symptom, key) => {
-              return <div className="symptom">{symptom.name}</div>
+              return <div className="symptom" key={key}>{symptom.name}</div>
             }) : "NO SYMPTOMS IN THIS INTERVENTION"
           }
         </div>
@@ -113,7 +114,7 @@ const InterventionsInfo = (props) => {
             Report
           </div>
         <div className="report">
-          {data?.Intervention?.report}
+          {data?.Intervention?.report ? data?.Intervention?.report : "No Report"}
         </div>
       </div>
     </div>

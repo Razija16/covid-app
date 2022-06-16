@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext, useRef } from 'react'
 import { useNavigate } from "react-router-dom";
 import FormApi from '../../api/form'
+import UserApi from '../../api/user';
 import Symptom from "../../components/symptom";
 import UserContext from "../../context"
 const Form = () => {
     const navigate = useNavigate();
-    const { user, setUser } = useContext(UserContext)
+    const { currentUser, setCurrentUser } = useContext(UserContext)
     const [data, setData] = useState([])
     const [level, setLevel] = useState(null)
     const [symptoms, setSymptoms] = useState([])
@@ -14,6 +15,7 @@ const Form = () => {
     const [modal, setModal] = useState(false)
     const [caseDayId, setCaseDayId] = useState(false)
     const risk_level = useRef(null);
+    const request = useRef(null);
     useEffect(() => {
 
         const makeRequest = async () => {
@@ -31,12 +33,6 @@ const Form = () => {
         makeRequest();
 
     }, [])
-
-    useEffect(() => {
-
-        console.log(checked)
-
-    }, [checked])
 
     const evaluateRisk = () => {
         //variable for evaluating risk level 
@@ -90,7 +86,7 @@ const Form = () => {
             <div className="form-header">
                 <div className="back" onClick={() => {
                     if (level === 1)
-                        navigate('/user-profile')
+                        navigate(-1)
                     else
                         setLevel(level - 1)
                 }}>
@@ -126,17 +122,22 @@ const Form = () => {
                     }
                     //make caseDay with info.
                     const obj = {
-                        user_id: user.user_id,
+                        user_id: currentUser.user_id,
                         alert_type: risk_level.current,
                         temperature: tempValue,
-                        caseId: user.caseId,
+                        caseId: currentUser.caseId,
                         symptoms: checked
                     }
                     try {
                         const result = await (await FormApi.createCaseDay(obj)).json()
                         console.log("result:", result)
+                        //setting request data if users click on request intervention option
+                        request.current = {
+                            alert_type: result.CaseDay.alert_type,
+                            casedayId: result.CaseDay.id,
+                            user_id: currentUser.user_id
+                        }
                         setModal(true);
-                        // navigate('/user-profile')
                     } catch (err) {
                         console.log("error")
                         console.log(err);
@@ -157,8 +158,25 @@ const Form = () => {
                                 : risk_level.current === 2 ? `If you feel like your case is for an intervention press “Request Intervention”, if not then press “OK”. Stay at home and wait for your isolation to end.`
                                     : 'Your case is not dangerous at the moment. Stay at home and wait for your isolation to end.'}
                         </div>
-                        
-                        {risk_level.current === 2 && <div className="request">Request Intervention! </div>}
+
+                        {risk_level.current === 2
+                            && <div
+                                className="request"
+                                onClick={async () => {
+                                    try {
+                                        const result = await UserApi.requestIntervention(request.current);
+                                        if (result.ok) {
+                                            alert("Intervention created")
+                                            navigate('/user-profile')
+                                        }
+
+                                    } catch (error) {
+                                        console.log(error)
+                                    }
+                                }}
+                            >
+                                Request Intervention!
+                            </div>}
 
                         <button className="button" onClick={() => navigate('/user-profile')}>OK</button>
                     </div>

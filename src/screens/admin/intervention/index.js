@@ -7,6 +7,7 @@ import Item from '../../../components/item';
 import Medical from "../../../assets/images/medical.png"
 
 const AdminIntervention = () => {
+    const { user, setUser } = useContext(UserContext)
     const [active, setActive] = useState('0')
     const [data, setData] = useState([])
     const navigate = useNavigate();
@@ -18,8 +19,6 @@ const AdminIntervention = () => {
             try {
                 const req = await AdminApi.getInterventions(active);
                 const final_data = await req.json();
-                console.log(req)
-                console.log(final_data)
                 setData(final_data)
             } catch (err) {
                 console.log("ERROR!")

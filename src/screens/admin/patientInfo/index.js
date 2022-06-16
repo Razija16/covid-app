@@ -29,7 +29,7 @@ const PatientInfo = () => {
     const [data, setData] = useState(null)
 
     return (
-        <div className='screen patient-info'>
+        <div className='patient-info-wrapper'>
             <div className="subheader">
                 <div className="back-button" onClick={() => { navigate(-1) }}>
                     <img src={backImg} alt="Back" />
@@ -59,7 +59,10 @@ const PatientInfo = () => {
             <div className="button delete"
                 onClick={async() => {
                     try {
-                       console.log("DELETE USER");
+                        const req=await AdminApi.deleteUser(data.id);
+                        if(req.ok){
+                            navigate(-1);
+                        }
                     } catch (error) {
                         console.log(error)
                     }

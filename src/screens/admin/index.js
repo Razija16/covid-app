@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import React, { useState, useEffect, useContext } from 'react'
+import { Link, Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import UserIcon from "../../assets/images/user.png"
 import Phone from "../../assets/images/phone.png"
 import Team from "../../assets/images/team.png"
 import Header from '../../components/header'
+import UserContext from '../../context'
 
 const AdminPanel = () => {
+    const navigate = useNavigate()
     const location = useLocation();
     const [active, setActive] = useState(null)
+    const { currentUser } = useContext(UserContext)
+    if (currentUser?.is_admin === false || !localStorage.getItem('token')) {
+        navigate('/login')
+    }
     useEffect(() => {
 
         switch (location.pathname) {
@@ -24,7 +30,9 @@ const AdminPanel = () => {
             default:
                 break;
         }
-
+        return () => {
+            setActive(null)
+        }
     }, [location.pathname])
 
 

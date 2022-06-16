@@ -15,6 +15,7 @@ const AdminPatients = () => {
         const makeReq = async () => {
             try {
                 const req = await (await AdminApi.getUsers()).json()
+                console.log(req);
                 setData(req)
             } catch (err) {
                 console.log(err)
@@ -29,8 +30,9 @@ const AdminPatients = () => {
                 return <Item
                     img={UserIcon}
                     name={user.first_name + " " + user.last_name}
-                    desc="Patient"
+                    desc={user.is_admin ? "Admin" : "Patient"}
                     id={user.id}
+                    key={user.id}
                     onClick={() => { navigate(`/admin/patient/${user.id}`) }}
                     style={{ color: "#48BA16" }}
                 />

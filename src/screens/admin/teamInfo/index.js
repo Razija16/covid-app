@@ -48,7 +48,7 @@ const TeamInfo = () => {
     const [errorMessage, setErrorMessage] = useState(null)
 
     return (
-        <div className='screen team-info'>
+        <div className='team-info-wrapper'>
             <div className="subheader">
                 <div className="back-button" onClick={() => { navigate(-1) }}>
                     <img src={backImg} alt="Back" />
