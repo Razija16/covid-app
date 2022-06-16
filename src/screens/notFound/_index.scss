@@ -7,9 +7,15 @@
     width: 100%;
     .login-button{
        padding: 15px 25px;
+       width: 250px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 15px 0;
        color: white;
        border-radius: 15px;
        background-color: $green-primary;
        cursor: pointer;
+       
     }
    }
