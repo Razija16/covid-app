@@ -1,10 +1,1 @@
-{
-  "@appcominteractive/cordova-plugin-hot-reload": {
-    "source": {
-      "type": "registry",
-      "id": "@appcominteractive/cordova-plugin-hot-reload"
-    },
-    "is_top_level": true,
-    "variables": {}
-  }
-}
+{}

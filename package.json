@@ -32,16 +32,13 @@
     "watch": "^1.0.2"
   },
   "devDependencies": {
-    "@appcominteractive/cordova-plugin-hot-reload": "^0.2.4",
     "cordova-android": "^10.1.2"
   },
   "cordova": {
     "platforms": [
       "android"
     ],
-    "plugins": {
-      "@appcominteractive/cordova-plugin-hot-reload": {}
-    }
+    "plugins": {}
   },
   "browserslist": {
     "production": [

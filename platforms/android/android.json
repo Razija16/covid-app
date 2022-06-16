@@ -6,14 +6,8 @@
   "config_munge": {
     "files": {}
   },
-  "installed_plugins": {
-    "@appcominteractive/cordova-plugin-hot-reload": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    }
-  },
+  "installed_plugins": {},
   "dependent_plugins": {},
   "modules": [],
-  "plugin_metadata": {
-    "@appcominteractive/cordova-plugin-hot-reload": "0.2.4"
-  }
+  "plugin_metadata": {}
 }
