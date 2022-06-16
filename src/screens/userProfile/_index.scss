@@ -28,7 +28,6 @@
     }
 
     .toggle-buttons {
-        cursor: pointer;
         padding: 1px;
         font-weight: 500;
         border-radius: 100px;
@@ -45,6 +44,7 @@
             outline: none;
             border: 0;
             background-color: #f6f6f6;
+            cursor: pointer;
         }
 
         .right-button-toggle {
@@ -54,11 +54,13 @@
             outline: none;
             border: 0;
             background-color: #f6f6f6;
+            cursor: pointer;
         }
 
         .active {
             background-color: white;
             color: $green-primary;
+            cursor: default;
         }
 
     }
@@ -116,13 +118,16 @@
 }
 
 @media only screen and(min-height:740px) {
+
     .cases,
     .interventions {
         height: 460px !important;
         overflow-y: auto;
     }
 }
+
 @media only screen and(min-height:850px) {
+
     .cases,
     .interventions {
         height: 550px !important;

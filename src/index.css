@@ -99,7 +99,7 @@ input[type="text"], input[type="email"], input[type="password"] {
       -ms-flex-align: center;
           align-items: center;
   height: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .header .invisible {
@@ -127,79 +127,6 @@ input[type="text"], input[type="email"], input[type="password"] {
   cursor: pointer;
 }
 
-.case-day {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 325px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 80px;
-  background-color: white;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-.case-day .case-img {
-  margin: 0 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-}
-
-.case-day .case-img img {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.case-day .case-info {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-}
-
-.case-day .case-info .date-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-}
-
-.case-day .case-info .date-container .time {
-  font-size: 22px;
-}
-
-.case-day .case-info .date-container .date {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: bold;
-}
-
-.case-day .case-info .alert-type {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
 .symptom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -213,6 +140,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 .card-day {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,9 +234,23 @@ input[type="text"], input[type="email"], input[type="password"] {
       -ms-flex-align: center;
           align-items: center;
   height: 68px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  padding: 0 5px;
 }
 
-.item-wrapper .img-wrapper {
+.item-wrapper .flex-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-wrapper .flex-1 .img-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,13 +264,17 @@ input[type="text"], input[type="email"], input[type="password"] {
   width: 60px;
 }
 
-.item-wrapper .item .item-name {
+.item-wrapper .flex-1 .item {
+  margin-left: 5px;
+}
+
+.item-wrapper .flex-1 .item .item-name {
   font-weight: bold;
   margin-bottom: 5px;
   text-transform: capitalize;
 }
 
-.item-wrapper .item .item-desc {
+.item-wrapper .flex-1 .item .item-desc {
   font-weight: 500;
 }
 
@@ -339,7 +285,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 320px;
+  width: 250px;
   height: 50px;
   margin: 10px 0;
 }
@@ -374,7 +320,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 260px;
+  width: 180px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -615,7 +561,6 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 .user-profile-screen .toggle-buttons {
-  cursor: pointer;
   padding: 1px;
   font-weight: 500;
   border-radius: 100px;
@@ -639,6 +584,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   outline: none;
   border: 0;
   background-color: #f6f6f6;
+  cursor: pointer;
 }
 
 .user-profile-screen .toggle-buttons .right-button-toggle {
@@ -648,11 +594,13 @@ input[type="text"], input[type="email"], input[type="password"] {
   outline: none;
   border: 0;
   background-color: #f6f6f6;
+  cursor: pointer;
 }
 
 .user-profile-screen .toggle-buttons .active {
   background-color: white;
   color: #5DB075;
+  cursor: default;
 }
 
 .user-profile-screen .cases,
@@ -763,17 +711,23 @@ input[type="text"], input[type="email"], input[type="password"] {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  margin-bottom: 35px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .case-day-screen .subheader .back-button {
-  margin-right: 50px;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 .case-day-screen .subheader .title {
   font-size: 30px;
   font-weight: bold;
+}
+
+.case-day-screen .subheader .empty {
+  width: 60px;
 }
 
 .case-day-screen .info-container {
@@ -865,177 +819,6 @@ input[type="text"], input[type="email"], input[type="password"] {
   width: 300px;
   color: white;
   margin: 10px 0;
-}
-
-.user-profile-screen {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.user-profile-screen .quarantine {
-  width: 320px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 10px;
-}
-
-.user-profile-screen .quarantine .label {
-  color: #EB5757;
-  font-size: 24px;
-  font-weight: bold;
-  width: 180px;
-}
-
-.user-profile-screen .quarantine .timer {
-  font-size: 32px;
-  font-weight: bold;
-  background-color: #EB5757;
-  color: white;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-.user-profile-screen .toggle-buttons {
-  cursor: pointer;
-  padding: 1px;
-  font-weight: 500;
-  border-radius: 100px;
-  border: 1px solid #E8E8E8;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-bottom: 10px;
-}
-
-.user-profile-screen .toggle-buttons .left-button-toggle {
-  padding: 14px 40px;
-  color: #BDBDBD;
-  border-radius: 100px;
-  outline: none;
-  border: 0;
-  background-color: #f6f6f6;
-}
-
-.user-profile-screen .toggle-buttons .right-button-toggle {
-  border-radius: 100px;
-  padding: 14px 40px;
-  color: #BDBDBD;
-  outline: none;
-  border: 0;
-  background-color: #f6f6f6;
-}
-
-.user-profile-screen .toggle-buttons .active {
-  background-color: white;
-  color: #5DB075;
-}
-
-.user-profile-screen .cases,
-.user-profile-screen .interventions {
-  height: 350px;
-  overflow-y: auto;
-}
-
-.user-profile-screen .button {
-  margin-top: auto;
-  margin-bottom: 20px;
-}
-
-.user-profile-screen .backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.user-profile-screen .backdrop .modal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-  border-radius: 5px;
-  background-color: white;
-  padding: 15px 5px;
-  padding-bottom: 0;
-}
-
-.user-profile-screen .backdrop .modal .label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  font-size: 26px;
-  font-weight: bold;
-  margin: auto;
-  text-align: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.user-profile-screen .backdrop .modal .button {
-  margin-top: auto;
-  margin-bottom: 20px;
-}
-
-@media only screen and (min-height: 740px) {
-  .cases,
-  .interventions {
-    height: 460px !important;
-    overflow-y: auto;
-  }
-}
-
-@media only screen and (min-height: 850px) {
-  .cases,
-  .interventions {
-    height: 550px !important;
-    overflow-y: auto;
-  }
 }
 
 .intervention-info-screen {
@@ -1350,6 +1133,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .form-screen .backdrop .modal .request {
   margin-top: 20px;
+  cursor: pointer;
   color: #5DB075;
   font-weight: bold;
 }
@@ -1421,6 +1205,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .team-wrapper .circle-wrapper {
   position: absolute;
+  cursor: pointer;
   bottom: 80px;
   right: 20px;
 }
@@ -1508,7 +1293,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   margin-left: 5px;
 }
 
-.team-info {
+.team-info-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1519,9 +1304,10 @@ input[type="text"], input[type="email"], input[type="password"] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 10px;
 }
 
-.team-info .subheader {
+.team-info-wrapper .subheader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1535,25 +1321,25 @@ input[type="text"], input[type="email"], input[type="password"] {
   margin-bottom: 20px;
 }
 
-.team-info .subheader .back-button {
+.team-info-wrapper .subheader .back-button {
   margin-left: 20px;
 }
 
-.team-info .subheader .title {
+.team-info-wrapper .subheader .title {
   font-size: 30px;
   font-weight: bold;
 }
 
-.team-info .subheader .empty {
+.team-info-wrapper .subheader .empty {
   width: 60px;
 }
 
-.team-info .delete {
+.team-info-wrapper .delete {
   background-color: #EB5757;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
-.team-info .member-wrapper {
+.team-info-wrapper .member-wrapper {
   background-color: #666666;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1577,11 +1363,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   margin: 10px 0;
 }
 
-.team-info h2 {
-  text-align: center;
-}
-
-.team-info .backdrop {
+.team-info-wrapper .backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
@@ -1599,7 +1381,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   top: 0px;
 }
 
-.team-info .backdrop .modal {
+.team-info-wrapper .backdrop .modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1609,7 +1391,9 @@ input[type="text"], input[type="email"], input[type="password"] {
           flex-direction: column;
   position: absolute;
   width: 320px;
-  min-height: 350px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
           box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   border-radius: 5px;
@@ -1618,7 +1402,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   padding-bottom: 0;
 }
 
-.team-info .backdrop .modal .exit {
+.team-info-wrapper .backdrop .modal .exit {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -1629,21 +1413,21 @@ input[type="text"], input[type="email"], input[type="password"] {
   max-height: 24px;
 }
 
-.team-info .backdrop .modal .error {
+.team-info-wrapper .backdrop .modal .error {
   margin-bottom: 10px;
 }
 
-.team-info .backdrop .modal .button {
+.team-info-wrapper .backdrop .modal .button {
   margin-top: 15px;
 }
 
-.team-info .backdrop .modal .modal-header {
+.team-info-wrapper .backdrop .modal .modal-header {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.team-info .backdrop .modal .label {
+.team-info-wrapper .backdrop .modal .label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1657,7 +1441,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   width: fit-content;
 }
 
-.team-info .backdrop .modal .covid-name-input {
+.team-info-wrapper .backdrop .modal .covid-name-input {
   background-color: white;
   border: 1px solid #A3A3A3;
   border-radius: 5px;
@@ -1666,7 +1450,15 @@ input[type="text"], input[type="email"], input[type="password"] {
   margin: 15px 0;
 }
 
-.patient-info {
+.team-info-wrapper .backdrop .modal .button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 2%;
+  margin-bottom: 15px;
+}
+
+.patients-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1679,7 +1471,20 @@ input[type="text"], input[type="email"], input[type="password"] {
           align-items: center;
 }
 
-.patient-info .subheader {
+.patient-info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.patient-info-wrapper .subheader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1694,20 +1499,20 @@ input[type="text"], input[type="email"], input[type="password"] {
   margin-bottom: 20px;
 }
 
-.patient-info .subheader .back-button {
+.patient-info-wrapper .subheader .back-button {
   margin-left: 20px;
 }
 
-.patient-info .subheader .title {
+.patient-info-wrapper .subheader .title {
   font-size: 30px;
   font-weight: bold;
 }
 
-.patient-info .subheader .empty {
+.patient-info-wrapper .subheader .empty {
   width: 60px;
 }
 
-.patient-info .delete {
+.patient-info-wrapper .delete {
   background-color: #EB5757;
   margin-top: 40px;
 }
@@ -1891,5 +1696,31 @@ input[type="text"], input[type="email"], input[type="password"] {
   padding: 15px 8px;
   margin: 15px 0;
   resize: none;
+}
+
+.not-found {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.not-found .login-button {
+  padding: 15px 25px;
+  color: white;
+  border-radius: 15px;
+  background-color: #5DB075;
+  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */
