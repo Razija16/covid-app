@@ -764,8 +764,9 @@ input[type="text"], input[type="email"], input[type="password"] {
   text-align: start;
 }
 
-.case-day-screen .info-container .time .img-container {
-  margin-left: 5px;
+.case-day-screen .info-container .time,
+.case-day-screen .info-container .temperature {
+  margin-left: 15px;
 }
 
 .case-day-screen .symptoms .text {
@@ -842,17 +843,23 @@ input[type="text"], input[type="email"], input[type="password"] {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  margin-bottom: 35px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .intervention-info-screen .subheader .back-button {
-  margin-right: 50px;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 .intervention-info-screen .subheader .title {
   font-size: 30px;
   font-weight: bold;
+}
+
+.intervention-info-screen .subheader .empty {
+  width: 60px;
 }
 
 .intervention-info-screen .info-container {
@@ -889,8 +896,9 @@ input[type="text"], input[type="email"], input[type="password"] {
   text-align: start;
 }
 
-.intervention-info-screen .info-container .time .img-container {
-  margin-left: 5px;
+.intervention-info-screen .info-container .time,
+.intervention-info-screen .info-container .team {
+  margin-left: 15px;
 }
 
 .intervention-info-screen .symptoms .text {
@@ -942,6 +950,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   border-radius: 5px;
   height: 32px;
   width: 300px;
+  margin: 10px 0;
   color: white;
 }
 
@@ -966,6 +975,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   background-color: #666666;
   color: white;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .form-screen {

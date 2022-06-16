@@ -21,7 +21,6 @@ const InterventionsInfo = (props) => {
 
   useEffect(() => {
 
-    console.log("DATA:", data)
     if (data?.Intervention?.createdAt)
       setCorrectDate(new Date(+data.Intervention.createdAt))
 
@@ -30,12 +29,9 @@ const InterventionsInfo = (props) => {
   useEffect(() => {
 
     const makeRequest = async () => {
-      console.log("Request")
       try {
         const result = await UserApi.getIntervention(params.id, params.casedayId);
-        console.log(result)
         const final_data = await result.json();
-        console.log(final_data)
         setData(final_data)
 
 

@@ -46,12 +46,11 @@
                 text-align: start;
             }
         }
-
-        .time {
-            .img-container {
-                margin-left: 5px;
-            }
+        .time,
+        .temperature{
+            margin-left: 15px;
         }
+        
     }
 
     .symptoms {

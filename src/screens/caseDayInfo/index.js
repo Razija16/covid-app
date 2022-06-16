@@ -20,7 +20,6 @@ const caseDayInfo = () => {
 
   useEffect(() => {
 
-    console.log("DATA:", data)
     if (data?.CaseDay?.createdAt)
       setCorrectDate(new Date(+data.CaseDay.createdAt))
 
