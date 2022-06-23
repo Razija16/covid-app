@@ -15,7 +15,6 @@ const AdminPanel = () => {
         navigate('/login')
     }
     useEffect(() => {
-
         switch (location.pathname) {
             case '/admin':
                 setActive(1)
@@ -28,7 +27,18 @@ const AdminPanel = () => {
                 break;
 
             default:
-                break;
+                if (location.pathname.includes('patient')) {
+                    setActive(1)
+                    break;
+                }
+                if (location.pathname.includes('team')) {
+                    setActive(3)
+                    break;
+                }
+                if (location.pathname.includes('intervention')) {
+                    setActive(2)
+                    break;
+                }
         }
         return () => {
             setActive(null)

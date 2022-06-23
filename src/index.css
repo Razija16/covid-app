@@ -28,6 +28,7 @@ body {
   font-size: 16px;
   border: none;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .error {
@@ -719,6 +720,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .case-day-screen .subheader .back-button {
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .case-day-screen .subheader .title {
@@ -733,16 +735,17 @@ input[type="text"], input[type="email"], input[type="password"] {
 .case-day-screen .info-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 150px 150px;
-      grid-template-columns: 150px 150px;
+  -ms-grid-columns: 120px 120px;
+      grid-template-columns: 120px 120px;
   gap: 30px 0;
+  padding: 0 15px;
 }
 
 .case-day-screen .info-container .date,
 .case-day-screen .info-container .time,
 .case-day-screen .info-container .alert_type,
 .case-day-screen .info-container .temperature {
-  width: 150px;
+  width: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -759,7 +762,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 .case-day-screen .info-container .time .content,
 .case-day-screen .info-container .alert_type .content,
 .case-day-screen .info-container .temperature .content {
-  width: 90px;
+  width: 100px;
   margin-left: 15px;
   text-align: start;
 }
@@ -767,6 +770,11 @@ input[type="text"], input[type="email"], input[type="password"] {
 .case-day-screen .info-container .time,
 .case-day-screen .info-container .temperature {
   margin-left: 15px;
+}
+
+.case-day-screen .info-container .time .content,
+.case-day-screen .info-container .temperature .content {
+  width: 50px;
 }
 
 .case-day-screen .symptoms .text {
@@ -851,6 +859,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .intervention-info-screen .subheader .back-button {
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .intervention-info-screen .subheader .title {
@@ -865,8 +874,8 @@ input[type="text"], input[type="email"], input[type="password"] {
 .intervention-info-screen .info-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 150px 150px;
-      grid-template-columns: 150px 150px;
+  -ms-grid-columns: 140px 120px;
+      grid-template-columns: 140px 120px;
   gap: 30px 0;
 }
 
@@ -874,7 +883,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 .intervention-info-screen .info-container .time,
 .intervention-info-screen .info-container .alert_type,
 .intervention-info-screen .info-container .team {
-  width: 150px;
+  width: 145px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -962,8 +971,8 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 .intervention-info-screen .report {
-  width: 320px;
-  max-width: 320px;
+  width: 310px;
+  max-width: 310px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -1021,6 +1030,7 @@ input[type="text"], input[type="email"], input[type="password"] {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 20px;
+  cursor: pointer;
 }
 
 .form-screen .form-header .empty {
@@ -1333,6 +1343,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .team-info-wrapper .subheader .back-button {
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .team-info-wrapper .subheader .title {
@@ -1466,6 +1477,7 @@ input[type="text"], input[type="email"], input[type="password"] {
       align-self: center;
   margin-top: 2%;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .patients-wrapper {
@@ -1511,6 +1523,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .patient-info-wrapper .subheader .back-button {
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .patient-info-wrapper .subheader .title {
@@ -1595,6 +1608,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .intervention-info-wrapper .subheader .back-button {
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .intervention-info-wrapper .subheader .title {

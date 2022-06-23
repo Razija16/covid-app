@@ -16,6 +16,7 @@ const Login = () => {
             <form onSubmit={handleSubmit(async (data) => {
                 try {
                     const result = await AuthApi.login(data);
+                    console.log("evoga",result)
                     if (result?.ok) {
                         const res = await result.json();
                         setErrorMessage(null)
@@ -33,7 +34,7 @@ const Login = () => {
                             localStorage.setItem("token", res.token);
 
                         //navigate
-                        if (res.user.is_admin) {
+                        if (res?.user.is_admin) {
                             navigate('/admin')
                             return;
                         } else {

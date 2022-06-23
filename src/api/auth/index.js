@@ -24,17 +24,6 @@ class AuthApi {
             },
             body: JSON.stringify(data)
         })
-            .then((res) => {
-                console.log("Odgovor:",res)
-                if (res.ok) return res.json();
-
-                throw new Error("Error signing in!");
-            })
-            .then((data) => {
-                console.log("DATA:",data)
-                //redirect?
-                return data;
-            });
     }
     static async getCurrentUser() {
         return fetch(`${this.BACKEND_URL}/profile/test`, {
